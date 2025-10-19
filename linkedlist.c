@@ -10,6 +10,12 @@ struct list* createNode(int a){
     node->next=NULL;
     return node;
 }
+struct list* insertAtBeginning(struct list* head, int data){
+    struct list* newNode=createNode(data);
+    newNode->next=head; 
+    head=newNode;       
+    return head;
+}
 void print(struct list*head){
     struct list*temp=head;
     while(temp!=NULL){
@@ -21,6 +27,9 @@ void print(struct list*head){
 int main() {
     struct list* head = createNode(23);
     head->next = NULL;
+    print(head);
+    head=insertAtBeginning(head, 11);
+    printf("Linked List(after insertion): ");
     print(head);
     return 0;
 }
