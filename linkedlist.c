@@ -10,9 +10,18 @@ struct list* createNode(int a){
     node->next=NULL;
     return node;
 }
+void print(struct list*head){
+    struct list*temp=head;
+    while(temp!=NULL){
+        printf("%d -> ",temp->n);
+        temp=temp->next;
+    }
+    printf("NULL\n");
+}
 int main() {
-    struct list* head = createNode(11);
+    struct list* head = createNode(23);
     head->next = NULL;
+    print(head);
     return 0;
 }
   
